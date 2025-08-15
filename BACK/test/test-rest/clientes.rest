@@ -1,0 +1,70 @@
+### Obtener lista de clientes (paginado por defecto)
+GET http://localhost:3000/api/clientes
+
+### Obtener lista de clientes (página 2, límite 5)
+GET http://localhost:3000/api/clientes?pagina=2&limite=5
+
+### Obtener cliente por ID válido (ID=1)
+GET http://localhost:3000/api/clientes/1
+
+### Obtener cliente por ID no existente (error 404)
+GET http://localhost:3000/api/clientes/999
+
+### Obtener cliente por mail válido
+GET http://localhost:3000/api/clientes/mail/alice@example.com
+
+### Obtener cliente por mail no existente (error 404)
+GET http://localhost:3000/api/clientes/mail/noexiste@dominio.com
+
+### Crear cliente válido
+POST http://localhost:3000/api/clientes
+Content-Type: application/json
+
+{
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "mail": "juan.perez@example.com",
+  "direccion": "Av. Siempre Viva 742",
+  "idBarrio": 3
+}
+
+### Crear cliente inválido (falta mail) — error 400
+POST http://localhost:3000/api/clientes
+Content-Type: application/json
+
+{
+  "nombre": "María",
+  "apellido": "Gómez",
+  "direccion": "Calle Falsa 123",
+  "idBarrio": 2
+}
+
+### Actualizar cliente válido (ID=1)
+PATCH http://localhost:3000/api/clientes/1
+Content-Type: application/json
+
+{
+  "direccion": "Nueva Dirección 456"
+}
+
+### Actualizar cliente no existente (ID=999) — error 400 o 404
+PATCH http://localhost:3000/api/clientes/999
+Content-Type: application/json
+
+{
+  "direccion": "No importa"
+}
+
+### Actualizar cliente inválido (ID=1, mail no válido) — error 400
+PATCH http://localhost:3000/api/clientes/1
+Content-Type: application/json
+
+{
+  "mail": "noesunmail"
+}
+
+### Eliminar cliente válido (ID=1)
+DELETE http://localhost:3000/api/clientes/1
+
+### Eliminar cliente no existente (ID=999) — error 400
+DELETE http://localhost:3000/api/clientes/999

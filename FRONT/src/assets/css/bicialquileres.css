@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+    background-image: url('../images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 250px;
+    position: relative;
+}
+header nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+header .nav-pills .nav-link {
+    background-color: #0d6efd;
+    color: rgb(255, 255, 255) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+header .nav-pills .nav-link:hover {
+    background-color: #0f356d !important;
+    color: #ffffff !important;
+}
+
+header .nav-pills .nav-link.active {
+    background-color: #ffffff !important;
+    color: #0d6efd !important;
+}
+
+.usuario-pill {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: #0d6efd;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.usuario-pill:hover {
+    background-color: #0f356d;
+    color: white;
+    cursor: pointer;
+}
+
+.landing-icon {
+    font-size: 3rem;
+    color: #0d6efd;
+}
+.landing-button {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+}
+
+/* Ajuste del nav-pills */
+.nav-pills {
+    background-color: #0d6efd !important;
+}

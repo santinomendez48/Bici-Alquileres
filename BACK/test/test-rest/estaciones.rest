@@ -1,0 +1,27 @@
+### Recuperar todas las estaciones activas
+GET http://localhost:3000/api/estaciones
+Accept: application/json
+
+### Recuperar todas las estaciones activas
+GET http://localhost:3000/api/estaciones?incluyeInactivos=true
+Accept: application/json
+
+### Buscar estaciones cuyo nombre o dirección contenga "plaza"
+GET http://localhost:3000/api/estaciones?texto=plaza
+Accept: application/json
+
+### Buscar estaciones del barrio con ID 2
+GET http://localhost:3000/api/estaciones?barrio=2
+Accept: application/json
+
+### Buscar estaciones cuyo nombre o dirección contenga "centro" y sean del barrio con ID 1
+GET http://localhost:3000/api/estaciones?texto=exactas&barrio=3
+Accept: application/json
+
+### Buscar estaciones cuyo nombre o dirección contenga "avenida", ignorando el barrio y trayendo también las inactivas
+GET http://localhost:3000/api/estaciones?texto=ciudad&barrio=-1&incluyeInactivos=true
+Accept: application/json
+
+### Obtener una Estación por clave primaria
+GET http://localhost:3000/api/estaciones/4
+Accept: application/json

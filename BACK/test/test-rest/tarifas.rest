@@ -1,0 +1,74 @@
+###
+# Obtener todas las tarifas (paginado por defecto)
+GET http://localhost:3000/api/tarifas
+Accept: application/json
+
+###
+# Obtener tarifas paginadas (página 1, límite 5)
+GET http://localhost:3000/api/tarifas?pagina=1&limite=5
+
+###
+# Obtener tarifa por ID existente
+GET http://localhost:3000/api/tarifas/1
+Accept: application/json
+
+###
+# Obtener tarifa por ID no existente
+GET http://localhost:3000/api/tarifas/999
+Accept: application/json
+
+###
+# Obtener tarifas por día de la semana (lunes) sin tipoTarifa
+GET http://localhost:3000/api/tarifas/semana/1
+Accept: application/json
+
+###
+# Obtener tarifas por día de la semana (domingo) con tipoTarifa = 2
+GET http://localhost:3000/api/tarifas/semana/7?tipoTarifa=2
+Accept: application/json
+
+###
+# Día de la semana inválido (fuera de rango)
+GET http://localhost:3000/api/tarifas/semana/8
+Accept: application/json
+
+###
+# Obtener tarifas por fecha (15/07/2025)
+GET http://localhost:3000/api/tarifas/fecha?dia=15&mes=7&anio=2025
+Accept: application/json
+
+###
+# Obtener tarifas por fecha con tipoTarifa = 2
+GET http://localhost:3000/api/tarifas/fecha?dia=1&mes=1&anio=2025&tipoTarifa=2
+Accept: application/json
+
+###
+# Fecha inválida: día fuera de rango
+GET http://localhost:3000/api/tarifas/fecha?dia=32&mes=1&anio=2025
+Accept: application/json
+
+###
+# Fecha inválida: mes fuera de rango
+GET http://localhost:3000/api/tarifas/fecha?dia=1&mes=13&anio=2025
+Accept: application/json
+
+###
+# Fecha inválida: valor no numérico
+GET http://localhost:3000/api/tarifas/fecha?dia=1&mes=a&anio=2025
+Accept: application/json
+
+# Crear tarifa
+POST http://localhost:3000/api/tarifas
+{
+    "descripcion": "Tarifa para la semana",
+    "tipoTarifa": "1",
+    "definicion": "S",
+    "diaSemana": 2,
+    "diaMes": 2,
+    "mes": 5,
+    "anio": 2025,
+    "montoFijoAlquiler": 1000,
+    "montoMinutoFraccion": 156,
+    "montoKm": 100,
+    "montoHora": 35,
+}

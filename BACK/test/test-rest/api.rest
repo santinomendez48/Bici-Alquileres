@@ -1,0 +1,19 @@
+### Obtener la respuesta de la API en la ruta /
+GET http://localhost:3000/api/
+Accept: text/plain
+
+### Obtener todos los usuarios
+GET http://localhost:3000/api/health-check
+Accept: application/json
+
+### Obtener un usuario por ID
+GET http://localhost:3000/api/echo
+Accept: application/json
+
+### Crear un nuevo usuario
+GET http://127.0.0.1:3000/api/echo?mensaje=Hola&nombre=Juan
+Content-Type: application/json
+
+### Ruta inexistente
+GET http://localhost:3000/cualquier-cosa
+Accept: application/json

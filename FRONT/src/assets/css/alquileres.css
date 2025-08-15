@@ -1,0 +1,49 @@
+.btn-primary {
+    background-color: #0d6efd !important;
+    color: rgb(255, 255, 255) !important;
+    border-color: #0d6efd !important;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: #0f356d !important;
+    color: #ffffff !important;
+    border-color: #0d6efd !important;
+}
+
+/* Estilos para el toggle switch */
+.form-switch .form-check-input {
+    background-color: #dee2e6;
+    border-color: #dee2e6;
+    cursor: pointer;
+}
+
+.form-switch .form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* Estilos para el select y el input de fecha */
+.form-select,
+.form-control {
+    border: 1px solid #dee2e6;
+    padding: 8px 12px;
+}
+
+.form-select:focus,
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Estilos para la tabla */
+.table-primary {
+    background-color: #0d6efd !important;
+    color: white;
+}
+
+.table-primary th {
+    border-color: #0a58ca;
+} 
